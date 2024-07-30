@@ -71,7 +71,7 @@ const Footer = () => {
                 alt="LinkedIn"
                 className="w-10 h-10 transition-transform duration-200 hover:scale-110"
                 onClick={()=>{
-                  window.open("https://www.linkedin.com/in/aditya-khade/","_blank")
+                  window.open("https://www.linkedin.com/in/ashwin-sunil-kumavat-0a25b9243/","_blank")
                 }}
               />
               <img
@@ -79,7 +79,7 @@ const Footer = () => {
                 alt="Github"
                 className="w-10 h-10 transition-transform duration-200 hover:scale-110"
                 onClick={()=>{
-                  window.open("https://github.com/ADITYA-KHADE","_blank")
+                  window.open("https://github.com/AKcode07","_blank")
                 }}
               />
               <img
@@ -87,7 +87,7 @@ const Footer = () => {
                 alt="Twitter"
                 className="w-10 h-10 transition-transform duration-200 hover:scale-110"
                 onClick={()=>{
-                  window.open("https://x.com/AdityaK46103791","_blank")
+                  window.open(" https://x.com/AshwinKumavat","_blank")
                 }}
               />
               <img
@@ -95,7 +95,7 @@ const Footer = () => {
                 alt="Instagram"
                 className="w-10 h-10 transition-transform duration-200 hover:scale-110"
                 onClick={()=>{
-                  window.open("https://www.instagram.com/iam_._._aditya/","_blank")
+                  window.open("https://www.instagram.com/ashwin.kumavat.07","_blank")
                 }}
               />
               <img
@@ -103,7 +103,7 @@ const Footer = () => {
                 alt="WhatsApp"
                 className="w-10 h-10 transition-transform duration-200 hover:scale-110"
                 onClick={()=>{
-                  window.open("https://wa.link/w6fx2b","_blank")
+                  window.open("https://api.whatsapp.com/send?phone=918668496805&text=Hi","_blank")
                 }}
               />
               <img
@@ -111,7 +111,7 @@ const Footer = () => {
                 alt="Telegram"
                 className="w-10 h-10 transition-transform duration-200 hover:scale-110"
                 onClick={()=>{
-                  window.open("https://t.me/+917798747090","_blank")
+                  window.open("https://t.me/+918668496805","_blank")
                 }}
               />
             </div>
@@ -134,7 +134,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-center gap-2">
         <img src={Coffee} alt="" className="md:w-8 md:h-8 w-6 h-6" />
-        <h1 className="text-center font-semibold lg:text-xl">Coffee hai toh code bhi hai.</h1>
+        <h1 className="text-center font-semibold lg:text-xl">I must be an exception because you have sure caught me.</h1>
       </div>
     </div>
   );
