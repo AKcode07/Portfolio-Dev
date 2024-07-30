@@ -35,7 +35,7 @@ const Footer = () => {
       id="footer"
     >
       <h1 className="text-center text-2xl font-normal font-playwrite ">
-        Aditya's Portfolio
+        Ashwin's Portfolio
       </h1>
       <div
         className={`mx-auto max-w-7xl flex text-slate-200 ${
@@ -50,19 +50,19 @@ const Footer = () => {
             <p className=" inline-flex gap-3">
               <img src={Phone} alt="" className="w-10 h-10" />
               <span className="relative top-1 hover:text-yellow-400 transition-transform duration-200 hover:scale-110">
-                +91 77987 47090
+                +91 8668496805
               </span>
             </p>
             <p className="inline-flex gap-3">
               <img src={Mail} alt="" className="w-10 h-10" />
               <span className="relative top-1 hover:text-yellow-400 transition-transform duration-200 hover:scale-110">
-                adityakhade1887@gmail.com
+                ashwin.21ug4029@iiitranchi.ac.in
               </span>
             </p>
             <p className="inline-flex gap-3">
               <img src={Map} alt="" className="w-10 h-10 " />
               <span className="relative top-1 hover:text-yellow-400 transition-transform duration-200 hover:scale-110">
-                Akot, Maharashtra-444101
+                Nashik, Maharashtra-422006
               </span>
             </p>
             <div className="inline-flex gap-3 mt-5">
