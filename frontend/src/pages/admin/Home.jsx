@@ -21,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <div className="text-black min-h-screen flex flex-col">
+    <div className="text-black min-h-screen flex flex-col bg-white">
       <Navbar mode={mode} setMode={setMode} />
       <div className="flex-grow overflow-y-auto">
         {renderContent()}
