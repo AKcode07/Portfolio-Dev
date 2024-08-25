@@ -55,7 +55,7 @@ const Login = () => {
                   type="email"
                   autoComplete="email"
                   value={email}
-                  placeholder="Enter email"
+                  placeholder=" Enter email"
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="bg-white text-gray-900 block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset  placeholder:text-gray-400  sm:text-sm sm:leading-6"
@@ -79,7 +79,7 @@ const Login = () => {
                   name="password"
                   type="password"
                   value={password}
-                  placeholder="Enter password"
+                  placeholder=" Enter password"
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="current-password"
                   required

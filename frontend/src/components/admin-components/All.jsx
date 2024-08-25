@@ -114,7 +114,7 @@ const All = () => {
             theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900 "
           }`}
         >
-          <div className={`w-full max-w-3xl ${theme === "dark" ? "text-white bg-gray-800 border-gray-600" : "text-gray-900 bg-white border-gray-300"} rounded-lg shadow-md border`}>
+          <div className={`w-full ${theme === "dark" ? "text-white bg-gray-800 border-gray-600" : "text-gray-900 bg-white border-gray-300"} rounded-lg shadow-md border`}>
             <table className="min-w-full border-collapse border">
               <thead>
                 <tr>
@@ -171,11 +171,11 @@ const All = () => {
       </div>
       <div>
         <h1 className="text-2xl font-bold text-center ">All Projects</h1>
-        <h1 className="text-2xl font-bold text-center ">test url : <a href="http://localhost:3000">click here</a> </h1>
-        <h1 className="text-2xl font-bold text-center ">deploy url : <a href="https://portfolio-bz4n.onrender.com/">click here</a></h1>
+        <h1 className="text-2xl font-bold text-center ">Test url : <a href="http://localhost:3000" className="underline">Link</a> </h1>
+        <h1 className="text-2xl font-bold text-center ">Deploy url : <a href="https://portfolio-bz4n.onrender.com/" className="underline">Link</a></h1>
 
 
-        <div className={`w-full max-w-3xl mt-16 rounded-lg shadow-md border ${theme === "dark" ? "bg-gray-900 text-white border-gray-600" : "bg-white text-gray-900 border-gray-300"}`}>
+        <div className={`w-full mt-16 rounded-lg shadow-md border ${theme === "dark" ? "bg-gray-900 text-white border-gray-600" : "bg-white text-gray-900 border-gray-300"}`}>
           <table className="min-w-full border-collapse rounded-2xl shadow-md border">
             <thead>
               <tr>
