@@ -87,11 +87,11 @@ const All = () => {
   }, []);
 
   return (
-    <div className="flex items-start gap-5 p-10">
-      <div className="flex flex-col gap-5">
+    <div className="flex flex-col lg:flex-row items-start gap-5 p-10">
+      <div className="flex flex-col gap-5 lg:w-1/2">
         <h1 className="text-2xl font-bold text-center">All Skills</h1>
         <div className="flex flex-col items-center">
-          <label htmlFor="pet-select" className={`mb-2 `}>
+          <label htmlFor="pet-select" className={`mb-2`}>
             Choose a category:
           </label>
 
@@ -109,57 +109,163 @@ const All = () => {
             ))}
           </select>
         </div>
-        <div
-          className={`flex justify-center items-center p-4 ${
-            theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900 "
-          }`}
-        >
-          <div className={`w-full ${theme === "dark" ? "text-white bg-gray-800 border-gray-600" : "text-gray-900 bg-white border-gray-300"} rounded-lg shadow-md border`}>
+        <div className="p-4 rounded-lg shadow-md border">
+          <div className={`overflow-x-auto ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900"} border ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+            <div className="block lg:hidden">
+              {allSkills.map((skill) => (
+                <div key={skill._id} className={`p-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                  <img
+                    src={
+                      theme === "dark"
+                        ? `${Server_Url}${skill.image.dark}`
+                        : `${Server_Url}${skill.image.light}`
+                    }
+                    alt={skill.name}
+                    className="h-16 w-16 object-contain mx-auto"
+                  />
+                  <p>{skill.name}</p>
+                  <p>{skill.type}</p>
+                  <p>{new Date(skill.createdAt).toLocaleDateString()}</p>
+                  <p>{new Date(skill.updatedAt).toLocaleDateString()}</p>
+                  <a
+                    href={skill.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    {skill.url}
+                  </a>
+                </div>
+              ))}
+            </div>
+            <div className="hidden lg:block">
+              <table className="min-w-full border-collapse border">
+                <thead>
+                  <tr>
+                    <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Image</th>
+                    <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Name</th>
+                    <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Type</th>
+                    <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Created At</th>
+                    <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Updated At</th>
+                    <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>URL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {allSkills.map((skill) => (
+                    <tr key={skill._id} className={theme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-100"}>
+                      <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"} text-center`}>
+                        <img
+                          src={
+                            theme === "dark"
+                              ? `${Server_Url}${skill.image.dark}`
+                              : `${Server_Url}${skill.image.light}`
+                          }
+                          alt={skill.name}
+                          className="h-16 w-16 object-contain mx-auto"
+                        />
+                      </td>
+                      <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                        {skill.name}
+                      </td>
+                      <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                        {skill.type}
+                      </td>
+                      <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                        {new Date(skill.createdAt).toLocaleDateString()}
+                      </td>
+                      <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                        {new Date(skill.updatedAt).toLocaleDateString()}
+                      </td>
+                      <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                        <a
+                          href={skill.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:underline"
+                        >
+                          {skill.url}
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="lg:w-1/2">
+        <h1 className="text-2xl font-bold text-center">All Projects</h1>
+        <h1 className="text-2xl font-bold text-center">Test url : <a href="http://localhost:3000" className="underline">Link</a></h1>
+        <h1 className="text-2xl font-bold text-center">Deploy url : <a href="https://portfolio-bz4n.onrender.com/" className="underline">Link</a></h1>
+
+        <div className={`w-full mt-16 rounded-lg shadow-md border ${theme === "dark" ? "bg-gray-900 text-white border-gray-600" : "bg-white text-gray-900 border-gray-300"}`}>
+          <div className="block lg:hidden">
+            {allProjects.map((project) => (
+              <div key={project._id} className={`p-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                <h2 className="text-lg font-bold">{project.name}</h2>
+                <p>{project.description}</p>
+                <p>Technologies: {project.technologies.join(", ")}</p>
+                <p>Created At: {new Date(project.createdAt).toLocaleDateString()}</p>
+                <p>Updated At: {new Date(project.updatedAt).toLocaleDateString()}</p>
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                  GitHub
+                </a>
+                <a href={project.deploy} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline ml-4">
+                  Live Demo
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="hidden lg:block">
             <table className="min-w-full border-collapse border">
               <thead>
                 <tr>
-                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Image</th>
-                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Name</th>
-                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Type</th>
+                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Project Name</th>
+                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Description</th>
+                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Technologies</th>
                   <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Created At</th>
                   <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Updated At</th>
-                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>URL</th>
+                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>GitHub</th>
+                  <th className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Live Demo</th>
                 </tr>
               </thead>
               <tbody>
-                {allSkills.map((skill) => (
-                  <tr key={skill._id} className={theme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-100"}>
-                    <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"} text-center`}>
-                      <img
-                        src={
-                          theme === "dark"
-                            ? `${Server_Url}${skill.image.dark}`
-                            : `${Server_Url}${skill.image.light}`
-                        }
-                        alt={skill.name}
-                        className="h-16 w-16 object-contain mx-auto"
-                      />
+                {allProjects.map((project) => (
+                  <tr key={project._id} className={theme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-100"}>
+                    <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                      {project.name}
                     </td>
                     <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                      {skill.name}
+                      {project.description}
                     </td>
                     <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                      {skill.type}
+                      {project.technologies.join(", ")}
                     </td>
                     <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                      {new Date(skill.createdAt).toLocaleDateString()}
+                      {new Date(project.createdAt).toLocaleDateString()}
                     </td>
                     <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                      {new Date(skill.updatedAt).toLocaleDateString()}
+                      {new Date(project.updatedAt).toLocaleDateString()}
                     </td>
                     <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
                       <a
-                        href={skill.url}
+                        href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500 hover:underline"
                       >
-                        {skill.url}
+                        GitHub
+                      </a>
+                    </td>
+                    <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
+                      <a
+                        href={project.deploy}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:underline"
+                      >
+                        Live Demo
                       </a>
                     </td>
                   </tr>
@@ -167,69 +273,6 @@ const All = () => {
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
-      <div>
-        <h1 className="text-2xl font-bold text-center ">All Projects</h1>
-        <h1 className="text-2xl font-bold text-center ">Test url : <a href="http://localhost:3000" className="underline">Link</a> </h1>
-        <h1 className="text-2xl font-bold text-center ">Deploy url : <a href="https://portfolio-bz4n.onrender.com/" className="underline">Link</a></h1>
-
-
-        <div className={`w-full mt-16 rounded-lg shadow-md border ${theme === "dark" ? "bg-gray-900 text-white border-gray-600" : "bg-white text-gray-900 border-gray-300"}`}>
-          <table className="min-w-full border-collapse rounded-2xl shadow-md border">
-            <thead>
-              <tr>
-                <th className={`py-2 px-3 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Project Name</th>
-                <th className={`py-2 px-3 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Description</th>
-                <th className={`py-2 px-3 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Technologies</th>
-                <th className={`py-2 px-3 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Created At</th>
-                <th className={`py-2 px-3 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Updated At</th>
-                <th className={`py-2 px-3 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>GitHub</th>
-                <th className={`py-2 px-3 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>Live Demo</th>
-              </tr>
-            </thead>
-            <tbody>
-              {allProjects.map((project) => (
-                <tr key={project._id} className={theme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-100"}>
-                  <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                    {project.name}
-                  </td>
-                  <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                    {project.description}
-                  </td>
-                  <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                    {project.technologies.join(", ")}
-                  </td>
-                  <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                    {new Date(project.createdAt).toLocaleDateString()}
-                  </td>
-                  <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                    {new Date(project.updatedAt).toLocaleDateString()}
-                  </td>
-                  <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </td>
-                  <td className={`py-2 px-4 border-b ${theme === "dark" ? "border-gray-600" : "border-gray-300"}`}>
-                    <a
-                      href={project.deploy}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:underline"
-                    >
-                      Live Demo
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
