@@ -1,5 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import Portfolio from "./pages/Portfolio";
+import { account, ID } from './lib/appwrite';
 
 function App() {
   return (
