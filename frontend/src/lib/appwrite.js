@@ -4,7 +4,7 @@ export const client = new Client();
 
 client
   .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject("66da0891042c5aa87458");
+  .setProject("66da90c75511f21fa934");
 
 export const account = new Account(client);
 export { ID } from "appwrite";
