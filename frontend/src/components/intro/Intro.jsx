@@ -91,7 +91,7 @@ const Intro = () => {
             } transition-transform duration-200 hover:scale-110`}
             onClick={() => {
               window.open(
-                "https://drive.google.com/file/d/11bqbdi3flT6ietgtE2CWepehq4PpYox7/view?usp=drive_link",
+                "https://drive.google.com/file/d/15TxsTsvUSEKH13hFu6u-BNVJd3pAcivX/view?usp=drive_link",
                 "_blank"
               );
             }}
